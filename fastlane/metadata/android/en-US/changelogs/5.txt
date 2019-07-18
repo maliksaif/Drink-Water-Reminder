@@ -1,0 +1,2 @@
+*Changed some icons from images to vectors
+*Dark Mode added
