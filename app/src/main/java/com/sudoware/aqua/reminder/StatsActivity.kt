@@ -161,6 +161,15 @@ class StatsActivity : AppCompatActivity() {
             dataSet.setDrawValues(false)
             dataSet.mode = LineDataSet.Mode.CUBIC_BEZIER
 
+
+            if(isThemeDark){
+                dataSet.fillDrawable = getDrawable(R.drawable.graph_fill_gradiant_dark)
+
+            }else{
+                dataSet.fillDrawable = getDrawable(R.drawable.graph_fill_gradiant)
+
+            }
+
             val lineData = LineData(dataSet)
             chart.xAxis.valueFormatter = (ChartXValueFormatter(dateArray))
             chart.data = lineData
