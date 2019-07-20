@@ -40,4 +40,11 @@
     <string name="_3100_ml">3100 ml</string>
     <string name="theme">Theme</string>
 
+    <string name="ratingMessage">Hey,you seem to like this app, You would help us a great deal with a 5 star rating!
+    </string>
+    <string name="cartilage_found_in_joints_and_the_disks_of_the_spine_contains_around_80_percent_water_long_term_dehydration_can_reduce_the_joints_shock_absorbing_ability_leading_to_joint_pain">
+        Cartilage, found in joints and the disks of the spine, contains around 80 percent water. Long-term dehydration
+        can reduce the joints\' shock-absorbing ability, leading to joint pain
+    </string>
+
 </resources>

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.util.TypedValue
@@ -19,9 +20,17 @@ import com.sudoware.aqua.reminder.helpers.AlarmHelper
 import com.sudoware.aqua.reminder.helpers.SqliteHelper
 import com.sudoware.aqua.reminder.utils.AppUtils
 import kotlinx.android.synthetic.main.activity_main.*
+import com.pixplicity.generate.OnFeedbackListener
+import com.pixplicity.generate.Rate
+import java.util.concurrent.TimeUnit
+import javax.xml.datatype.DatatypeConstants.DAYS
+
+
+
 
 
 class MainActivity : AppCompatActivity() {
+
 
 
     private var totalIntake: Int = 0
@@ -66,6 +75,7 @@ class MainActivity : AppCompatActivity() {
 
         dateNow = AppUtils.getCurrentDate()!!
 
+        appRatingSnackBar()
 //        setFabColors()
     }
 
@@ -84,21 +94,22 @@ class MainActivity : AppCompatActivity() {
                 R.color.colorBlack
             )
         )
-        tvIntook.setTextColor(resources.getColor(R.color.colorBlack))
-        tvTotalIntake.setTextColor(resources.getColor(R.color.colorBlack))
+        tvIntook.setTextColor((ContextCompat.getColor(applicationContext,R.color.colorBlack)))
+        tvTotalIntake.setTextColor((ContextCompat.getColor(applicationContext,R.color.colorBlack)))
 
         intakeProgress.progressColor = Color.BLACK
         intakeProgress.markerColor = Color.BLACK
         intakeProgress.textColorMarker = Color.BLACK
-        btnMenu.setImageDrawable(resources.getDrawable(R.drawable.ic_settings_black_24dp))
+        btnMenu.setImageDrawable( ContextCompat.getDrawable(applicationContext,R.drawable.ic_settings_black_24dp))
 
-        main_activity_parent.background = resources.getDrawable(R.drawable.ic_app_bg_dark)
-        constraintLayout2.setBackgroundColor(resources.getColor(R.color.blackishGrey))
-        constraintLayout3.setBackgroundColor(resources.getColor(R.color.blackishGrey))
+        main_activity_parent.background = ContextCompat.getDrawable(applicationContext,R.drawable.ic_app_bg_dark)
+        constraintLayout2.setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.blackishGrey))
+        constraintLayout3.setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.blackishGrey))
+        horizontalView.setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.colorWhite))
 
-        btnNotific.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.blackishGrey))
-        btnStats.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.blackishGrey))
-        fabAdd.setImageDrawable(resources.getDrawable(R.drawable.ic_plus_solid_dark))
+        btnNotific.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(applicationContext,R.color.blackishGrey))
+        btnStats.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(applicationContext,R.color.blackishGrey))
+        fabAdd.setImageDrawable( ContextCompat.getDrawable(applicationContext,R.drawable.ic_plus_solid_dark))
 
 
     }
@@ -113,21 +124,23 @@ class MainActivity : AppCompatActivity() {
                 R.color.colorWhite
             )
         )
-        tvIntook.setTextColor(resources.getColor(R.color.colorWhite))
-        tvTotalIntake.setTextColor(resources.getColor(R.color.colorWhite))
+        tvIntook.setTextColor((ContextCompat.getColor(applicationContext,R.color.colorWhite)))
+        tvTotalIntake.setTextColor((ContextCompat.getColor(applicationContext,R.color.colorWhite)))
+
 
         intakeProgress.progressColor = Color.WHITE
         intakeProgress.markerColor = Color.WHITE
         intakeProgress.textColorMarker = Color.WHITE
-        btnMenu.setImageDrawable(resources.getDrawable(R.drawable.ic_settings_white_24dp))
+        btnMenu.setImageDrawable( ContextCompat.getDrawable(applicationContext,R.drawable.ic_settings_white_24dp))
 
-        main_activity_parent.background = resources.getDrawable(R.drawable.ic_app_bg)
-        constraintLayout2.setBackgroundColor(resources.getColor(R.color.colorWhite))
-        constraintLayout3.setBackgroundColor(resources.getColor(R.color.colorWhite))
+        main_activity_parent.background = ContextCompat.getDrawable(applicationContext,R.drawable.ic_app_bg)
+        constraintLayout2.setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.colorWhite))
+        constraintLayout3.setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.colorWhite))
+//        horizontalView.setBackgroundColordColor(null)
 
-        btnNotific.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.colorWhite))
-        btnStats.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.colorWhite))
-        fabAdd.setImageDrawable(resources.getDrawable(R.drawable.ic_plus_solid))
+        btnNotific.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(applicationContext,R.color.colorWhite))
+        btnStats.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(applicationContext,R.color.colorWhite))
+        fabAdd.setImageDrawable( ContextCompat.getDrawable(applicationContext,R.drawable.ic_plus_solid))
 
 
     }
@@ -143,7 +156,7 @@ class MainActivity : AppCompatActivity() {
         val alarm = AlarmHelper()
         if (!alarm.checkAlarm(this) && notificStatus) {
             btnNotific.setImageDrawable(getDrawable(R.drawable.ic_bell))
-            alarm.setAlarm(this, sharedPref.getInt(AppUtils.NOTIFICATION_FREQUENCY_KEY, 30).toLong())
+            alarm.setAlarm(this, sharedPref.getInt(AppUtils.NOTIFICATION_FREQUENCY_KEY, AppUtils.MINUTES_30).toLong())
         }
 
         if (notificStatus) {
@@ -196,6 +209,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         fabAdd.setOnClickListener {
+
+
             if (selectedOption != null && selectedOptionName != null) {
                 if ((inTook * 100 / totalIntake) <= 140) {
                     if (sqliteHelper.addIntook(dateNow, selectedOption!!) > 0) {
@@ -232,13 +247,16 @@ class MainActivity : AppCompatActivity() {
             if (notificStatus) {
                 btnNotific.setImageDrawable(getDrawable(R.drawable.ic_bell))
                 Snackbar.make(it, "Notification Enabled..", Snackbar.LENGTH_SHORT).show()
-                alarm.setAlarm(this, sharedPref.getInt(AppUtils.NOTIFICATION_FREQUENCY_KEY, 30).toLong())
+                alarm.setAlarm(this, sharedPref.getInt(AppUtils.NOTIFICATION_FREQUENCY_KEY, AppUtils.MINUTES_30).toLong())
             } else {
                 btnNotific.setImageDrawable(getDrawable(R.drawable.ic_bell_disabled))
                 Snackbar.make(it, "Notification Disabled..", Snackbar.LENGTH_SHORT).show()
                 alarm.cancelAlarm(this)
             }
         }
+
+
+
 
         btnStats.setOnClickListener {
             startActivity(Intent(this, StatsActivity::class.java))
@@ -337,6 +355,39 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+    private fun appRatingSnackBar(){
+
+        val rate = Rate.Builder(applicationContext)
+            // Trigger dialog after this many events (optional, defaults to 6)
+            .setTriggerCount(10)
+            // After dismissal, trigger again after this many events (optional, defaults to 30)
+            .setRepeatCount(10)
+            .setMinimumInstallTime(TimeUnit.DAYS.toMillis(7).toInt())   // Optional, defaults to 7 days
+            .setFeedbackAction(object : OnFeedbackListener {
+                override fun onRateTapped() {
+                    // User was redirected to the Play Store
+                }       // Optional
+                override fun onFeedbackTapped() {
+                    Toast.makeText(this@MainActivity, "Meh", Toast.LENGTH_SHORT).show()
+                }
+                override fun onRequestDismissed(dontAskAgain: Boolean) {
+                    // User has dismissed the request
+                }
+            })
+            .setSnackBarParent(main_activity_parent)                            // Optional, shows dialog by default
+            .setMessage(resources.getString(R.string.ratingMessage))                // Optional
+            .setPositiveButton("Sure!")                         // Optional
+            .setCancelButton("Maybe later")                     // Optional
+            .setNegativeButton("Nope!")                         // Optional
+            .setFeedbackText("Holla at us")
+            .setFeedbackAction(Uri.parse("mailto:maliksaif@sudoware.pk"))// Optional
+            .setLightTheme(true)                                // Default is dark
+            .setSwipeToDismissVisible(false)                    // Add this when using the Snackbar
+            // without a CoordinatorLayout as a parent.
+            .build()
+
+    }
 
     private fun setWaterLevel(inTook: Int, totalIntake: Int) {
 

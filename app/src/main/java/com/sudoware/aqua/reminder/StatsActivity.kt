@@ -1,5 +1,6 @@
 package com.sudoware.aqua.reminder
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.database.Cursor
 import android.graphics.Color
@@ -95,7 +96,9 @@ class StatsActivity : AppCompatActivity() {
 
         btnInfo.setOnClickListener {
 
-            Toast.makeText(applicationContext, "Info Clicked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(applicationContext, "Info Clicked", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, InfoActivity::class.java))
+
 
         }
 
@@ -113,7 +116,6 @@ class StatsActivity : AppCompatActivity() {
         val cursor: Cursor = sqliteHelper.getAllStats()
 
         if (cursor.moveToFirst()) {
-
             for (i in 0 until cursor.count) {
                 dateArray.add(cursor.getString(1))
                 val percent = cursor.getInt(2) / cursor.getInt(3).toFloat() * 100
@@ -122,7 +124,6 @@ class StatsActivity : AppCompatActivity() {
                 entries.add(Entry(i.toFloat(), percent))
                 cursor.moveToNext()
             }
-
         } else {
             Toast.makeText(this, "Empty", Toast.LENGTH_LONG).show()
         }

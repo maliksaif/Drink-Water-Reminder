@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+            app:cardBackgroundColor="@color/blackishGrey"
+            android:layout_width="0dp"
+            android:id="@+id/cardView"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp"
+            android:layout_margin="5dp"
+            android:layout_height="match_parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="4dp" android:layout_marginEnd="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:text="It lubricates the joints"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/titleTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/item_imageViewCardView"
+                    app:layout_constraintVertical_bias="0.833"/>
+
+            <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="#dcdde1"
+                    android:id="@+id/item_imageViewCardView"
+                    android:layout_width="match_parent"
+                    app:cardCornerRadius="5dp"
+                    android:elevation="5dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="36dp" app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/descriptionTextView">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_gravity="center"
+                        android:src="@drawable/water_long"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:id="@+id/item_imageView"
+                />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <com.sudoware.aqua.reminder.helpers.ExpandableTextView
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:textColor="@color/colorWhite"
+                    android:text="@string/cartilage_found_in_joints_and_the_disks_of_the_spine_contains_around_80_percent_water_long_term_dehydration_can_reduce_the_joints_shock_absorbing_ability_leading_to_joint_pain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/descriptionTextView"
+                    app:layout_constraintStart_toStartOf="@+id/item_imageViewCardView"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/item_imageViewCardView"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

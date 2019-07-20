@@ -78,20 +78,20 @@ class BottomSheetFragment(val mCtx: Context) : BottomSheetDialogFragment() {
         
         radioNotificItervel.setOnClickedButtonListener { _, position ->
             notificFrequency = when (position) {
-                0 -> 30
-                1 -> 45
-                2 -> 60
-                else -> 30
+                0 -> AppUtils.MINUTES_30
+                1 -> AppUtils.MINUTES_45
+                2 -> AppUtils.MINUTES_60
+                else -> AppUtils.MINUTES_30
             }
         }
-        notificFrequency = sharedPref.getInt(AppUtils.NOTIFICATION_FREQUENCY_KEY, 30)
+        notificFrequency = sharedPref.getInt(AppUtils.NOTIFICATION_FREQUENCY_KEY, AppUtils.MINUTES_30)
         when (notificFrequency) {
-            30 -> radioNotificItervel.position = 0
-            45 -> radioNotificItervel.position = 1
-            60 -> radioNotificItervel.position = 2
+            AppUtils.MINUTES_30 -> radioNotificItervel.position = 0
+            AppUtils.MINUTES_45 -> radioNotificItervel.position = 1
+            AppUtils.MINUTES_60 -> radioNotificItervel.position = 2
             else -> {
                 radioNotificItervel.position = 0
-                notificFrequency = 30
+                notificFrequency = AppUtils.MINUTES_30
             }
         }
 

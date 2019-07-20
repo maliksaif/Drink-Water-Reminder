@@ -12,10 +12,15 @@ Drink Water reminder simple android app to remind you to drink water and track y
 
 <img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/4-Stats.png" width="250px"> <img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/4-Statsdark.png" width="250px"> 
 
+<img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/5-info.png" width="250px"> <img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/5-infodark.png" width="250px"> 
+
+
 
 ## Installation
 
 Download the Code and build it with android studio,Its that simple.
+
+Note
 
 ## Contributing
 

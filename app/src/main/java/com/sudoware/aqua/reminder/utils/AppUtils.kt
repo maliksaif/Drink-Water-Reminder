@@ -31,5 +31,8 @@ class AppUtils {
         const val NOTIFICATION_TONE_URI_KEY = "notificationtone"
         const val FIRST_RUN_KEY = "firstrun"
         const val THEME_SELECTION = "themeselection"
+        const val MINUTES_30 = 30
+        const val MINUTES_45 = 45
+        const val MINUTES_60 = 60
     }
 }

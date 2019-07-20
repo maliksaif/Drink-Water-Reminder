@@ -15,4 +15,13 @@
 
     <color name="blackishGrey">#505050</color>
 
+
+
+    <color name="starColor">#45b9ad</color>
+    <color name="noteDescriptionTextColor">#45b9ad</color>
+    <color name="titleTextColor">#FFFFFF</color>
+    <color name="descriptionTextColor">#A6FFFFFF</color>
+    <color name="commentTextColor">#FFFFFF</color>
+    <color name="hintTextColor">#55000000</color>
+
 </resources>

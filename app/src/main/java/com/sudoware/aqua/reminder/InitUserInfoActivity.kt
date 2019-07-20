@@ -56,7 +56,7 @@ class InitUserInfoActivity : AppCompatActivity() {
             val mTimePicker: TimePickerDialog
             mTimePicker = TimePickerDialog(
                 this,
-                TimePickerDialog.OnTimeSetListener { timePicker, selectedHour, selectedMinute ->
+                TimePickerDialog.OnTimeSetListener { _, selectedHour, selectedMinute ->
 
                     val time = Calendar.getInstance()
                     time.set(Calendar.HOUR_OF_DAY, selectedHour)
@@ -71,8 +71,6 @@ class InitUserInfoActivity : AppCompatActivity() {
             mTimePicker.setTitle("Select Wakeup Time")
             mTimePicker.show()
         }
-
-
         etSleepTime.editText!!.setOnClickListener {
             val calendar = Calendar.getInstance()
             calendar.timeInMillis = sleepingTime
@@ -95,7 +93,6 @@ class InitUserInfoActivity : AppCompatActivity() {
             mTimePicker.setTitle("Select Sleeping Time")
             mTimePicker.show()
         }
-
         btnContinue.setOnClickListener {
 
             val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
