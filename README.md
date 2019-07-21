@@ -20,7 +20,7 @@ Drink Water reminder simple android app to remind you to drink water and track y
 
 Download the Code and build it with android studio,Its that simple.
 
-Note
+Note : it may ask for updating some things like gradle and  build tools.
 
 ## Contributing
 
