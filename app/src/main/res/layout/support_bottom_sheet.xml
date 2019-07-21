@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+
+        app:cardBackgroundColor="@color/colorSecondaryDark"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   android:orientation="vertical"
+                                   app:cardCornerRadius="5dp"
+                                   android:elevation="5dp"
+                                   app:cardElevation="5dp"
+                                   android:id="@+id/support_bottom_sheet"
+                                   android:layout_margin="10dp"
+                                   app:behavior_hideable="true"
+                                   app:behavior_peekHeight="56dp"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        <TextView
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:text="@string/like_this_app_buy_me_a_coffee"
+                  android:textSize="14sp"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/contactProImageView"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/contact_champpro_logo"
+                android:layout_width="70dp" android:layout_height="70dp"/>
+
+        <TextView
+                android:textColor="@color/colorWhite"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="@string/more_free_apps"
+        />
+
+
+        <HorizontalScrollView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+
+            <LinearLayout
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+            >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@drawable/contactchamp_logo"
+                        android:id="@+id/contactChampImageView"
+                        android:layout_margin="5dp"
+                        android:layout_width="70dp" android:layout_height="70dp"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@drawable/flashingo"
+                        android:id="@+id/flashingoImageView"
+                        android:layout_marginTop="10dp"
+                        android:layout_margin="5dp"
+                        android:layout_width="70dp" android:layout_height="70dp"/>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

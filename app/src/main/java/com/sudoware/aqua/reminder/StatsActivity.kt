@@ -96,7 +96,6 @@ class StatsActivity : AppCompatActivity() {
 
         btnInfo.setOnClickListener {
 
-            Toast.makeText(applicationContext, "Info Clicked", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, InfoActivity::class.java))
 
 

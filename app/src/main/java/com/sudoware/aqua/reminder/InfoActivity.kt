@@ -6,12 +6,17 @@ import android.os.Bundle
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.sudoware.aqua.reminder.adapter.InformationAdapter
 import com.sudoware.aqua.reminder.helpers.InfoHelper
 import com.sudoware.aqua.reminder.utils.AppUtils
 import kotlinx.android.synthetic.main.activity_info.*
 import kotlinx.android.synthetic.main.activity_info.btnBack
 import kotlinx.android.synthetic.main.activity_stats.*
+import kotlinx.android.synthetic.main.support_bottom_sheet.*
+import android.content.Intent
+import android.net.Uri
+
 
 class InfoActivity : AppCompatActivity() {
 
@@ -121,7 +126,9 @@ class InfoActivity : AppCompatActivity() {
 
     )
 
+
     lateinit var infoAdapter: InformationAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -170,6 +177,41 @@ class InfoActivity : AppCompatActivity() {
         btnBack.setOnClickListener {
             finish()
         }
+
+        //**Open Play store with these links *//
+
+        contactProImageView.setOnClickListener {
+
+            openPlayStore("com.sudoware.contactchamppro")
+
+        }
+
+        contactChampImageView.setOnClickListener {
+
+            openPlayStore("com.sudoware.contactchamp")
+
+        }
+        flashingoImageView.setOnClickListener {
+
+            openPlayStore("pk.sudoware.com.flashingo")
+
+        }
+
+    }
+
+    private fun openPlayStore(appPackageName : String){
+
+        try {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$appPackageName")))
+        } catch (anfe: android.content.ActivityNotFoundException) {
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://play.google.com/store/apps/details?id=$appPackageName")
+                )
+            )
+        }
+
 
     }
 

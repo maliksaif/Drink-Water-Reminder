@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/main_constraintLayout"
@@ -8,6 +8,7 @@
         android:layout_height="match_parent"
         tools:context=".InfoActivity">
 
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
 
     <ImageButton
             android:background="?attr/selectableItemBackground"
@@ -18,14 +19,15 @@
             android:id="@+id/btnBack"
             android:contentDescription="@string/back_button_imageview"/>
 
-
     <androidx.recyclerview.widget.RecyclerView
             android:layout_below="@+id/btnBack"
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintTop_toBottomOf="@+id/btnBack"
-       />
+    />
+    </RelativeLayout>
+    <include
+        layout="@layout/support_bottom_sheet"/>
 
-
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

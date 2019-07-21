@@ -19,11 +19,28 @@ Drink Water reminder simple android app to remind you to drink water and track y
 
 
 
+
+
 ## Installation
 
 Download the Code and build it with android studio,Its that simple.
 
 Note : it may ask for updating some things like gradle and  build tools.
+
+
+
+## More Apps
+### Contact Champ
+<a href="https://play.google.com/store/apps/details?id=com.sudoware.contactchamp"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=56px /></a>
+
+
+### Contact pro
+<a href="https://play.google.com/store/apps/details?id=com.sudoware.contactchamppro"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=56px /></a>
+
+### Flashingo ( Simple Torch App )
+<a href="https://play.google.com/store/apps/details?id=pk.sudoware.com.flashingo"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=56px /></a>
+
+
 
 ## Contributing
 
