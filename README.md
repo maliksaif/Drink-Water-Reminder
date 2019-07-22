@@ -4,6 +4,9 @@
 
 Drink Water reminder simple android app to remind you to drink water and track your water intake habit and keep you hydrated.
 
+## Download Now.
+<a href="https://play.google.com/store/apps/details?id=com.sudoware.aqua.reminder"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=56px /></a>
+
 ## ScreenShots
 
 <img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/1-Intro.png" width="250px"> <img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/2-Edit.png" width="250px"> 
@@ -35,9 +38,10 @@ Note : it may ask for updating some things like gradle and  build tools.
 <a href="https://play.google.com/store/apps/details?id=pk.sudoware.com.flashingo"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=56px /></a>
 
 ## TODO
-- [ ] Language Translation
-- [ ] Adding Few more Items Like ( Different Containers )
+- [ ] Language Translation.
+- [ ] Adding Few more Items Like Different Drink Containers, Custom Containers.
 - [ ] Dynamic Loading of Fact's.
+- [ ] Android Wear Support. 
 
 ## Contributing
 
