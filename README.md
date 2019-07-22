@@ -16,8 +16,6 @@ Drink Water reminder simple android app to remind you to drink water and track y
 
 
 
-
-
 ## Installation
 
 Download the Code and build it with android studio,Its that simple.
@@ -36,7 +34,10 @@ Note : it may ask for updating some things like gradle and  build tools.
 ### Flashingo ( Simple Torch App )
 <a href="https://play.google.com/store/apps/details?id=pk.sudoware.com.flashingo"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=56px /></a>
 
-
+## TODO
+- [ ] Language Translation
+- [ ] Adding Few more Items Like ( Different Containers )
+- [ ] Dynamic Loading of Fact's.
 
 ## Contributing
 
@@ -51,7 +52,3 @@ All icons were downloaded from [Flaticon](https://www.flaticon.com)
 UI design was inspired from [Dribble](https://dribbble.com)
 
 Thank you [Jabir Mohammad ACK](https://github.com/z3r0c00l-2k) for this Open Source Project.
-
-## For Original product you can Visit.
-
-You can also download the source code from [Original Developer](https://github.com/z3r0c00l-2k/AquaDroid).
