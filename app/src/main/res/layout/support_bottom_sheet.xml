@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
-
-        app:cardBackgroundColor="@color/colorSecondaryDark"
         xmlns:android="http://schemas.android.com/apk/res/android"
                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                    android:orientation="vertical"
@@ -11,7 +9,7 @@
                                    android:id="@+id/support_bottom_sheet"
                                    android:layout_margin="10dp"
                                    app:behavior_hideable="true"
-                                   app:behavior_peekHeight="56dp"
+                                   app:behavior_peekHeight="46dp"
                                    android:layout_width="match_parent"
                                    android:layout_height="wrap_content"
                                    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
@@ -23,8 +21,9 @@
 
 
         <TextView
+                android:id="@+id/buymeTextView"
                 android:textStyle="bold"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorBlack"
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                   android:text="@string/like_this_app_buy_me_a_coffee"
                   android:textSize="14sp"/>
@@ -39,7 +38,8 @@
                 android:layout_width="70dp" android:layout_height="70dp"/>
 
         <TextView
-                android:textColor="@color/colorWhite"
+                android:id="@+id/moreFreeTextView"
+                android:textColor="@color/colorBlack"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:text="@string/more_free_apps"
         />
@@ -71,6 +71,12 @@
 
         </HorizontalScrollView>
 
+
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_gravity="end"
+                  android:text="@string/version_no"
+                  android:layout_height="match_parent"/>
 
     </LinearLayout>
 

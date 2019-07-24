@@ -1,10 +1,8 @@
 package com.sudoware.aqua.reminder.helpers;
 
-import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.util.AttributeSet;
 import android.view.View;
@@ -59,12 +57,12 @@ public class ExpandableTextView extends TextView {
     @Override
     public void setText(CharSequence text, BufferType type) {
         originalText = text;
-        trimmedText = getTrimmedText(text);
+        trimmedText = getTrimmedText();
         bufferType = type;
         setText();
     }
 
-    private CharSequence getTrimmedText(CharSequence text) {
+    private CharSequence getTrimmedText() {
         if (originalText != null && originalText.length() > trimLength) {
             return new SpannableStringBuilder(originalText, 0, trimLength + 1).append(ELLIPSIS);
         } else {
@@ -78,7 +76,7 @@ public class ExpandableTextView extends TextView {
 
     public void setTrimLength(int trimLength) {
         this.trimLength = trimLength;
-        trimmedText = getTrimmedText(originalText);
+        trimmedText = getTrimmedText();
         setText();
     }
 

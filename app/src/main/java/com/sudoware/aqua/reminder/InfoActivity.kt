@@ -1,26 +1,23 @@
 package com.sudoware.aqua.reminder
 
+import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.sudoware.aqua.reminder.adapter.InformationAdapter
 import com.sudoware.aqua.reminder.helpers.InfoHelper
 import com.sudoware.aqua.reminder.utils.AppUtils
 import kotlinx.android.synthetic.main.activity_info.*
-import kotlinx.android.synthetic.main.activity_info.btnBack
-import kotlinx.android.synthetic.main.activity_stats.*
 import kotlinx.android.synthetic.main.support_bottom_sheet.*
-import android.content.Intent
-import android.net.Uri
 
 
 class InfoActivity : AppCompatActivity() {
 
-    lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerView: RecyclerView
 
     private lateinit var sharedPref: SharedPreferences
     private var isThemeDark: Boolean = false
@@ -127,7 +124,7 @@ class InfoActivity : AppCompatActivity() {
     )
 
 
-    lateinit var infoAdapter: InformationAdapter
+    private lateinit var infoAdapter: InformationAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -160,6 +157,10 @@ class InfoActivity : AppCompatActivity() {
                 R.drawable.ic_app_bg_dark
             )
 
+            support_bottom_sheet.setCardBackgroundColor( ContextCompat.getColor(applicationContext,R.color.blackishGrey))
+            buymeTextView.setTextColor(ContextCompat.getColor(applicationContext,R.color.colorWhite))
+            moreFreeTextView.setTextColor(ContextCompat.getColor(applicationContext,R.color.colorWhite))
+
         } else {
             btnBack.setImageDrawable(
                 ContextCompat.getDrawable(
@@ -172,6 +173,10 @@ class InfoActivity : AppCompatActivity() {
                 applicationContext,
                 R.drawable.ic_app_bg
             )
+
+            support_bottom_sheet.setCardBackgroundColor( ContextCompat.getColor(applicationContext,R.color.colorWhite))
+            buymeTextView.setTextColor(ContextCompat.getColor(applicationContext,R.color.colorBlack))
+            moreFreeTextView.setTextColor(ContextCompat.getColor(applicationContext,R.color.colorBlack))
         }
 
         btnBack.setOnClickListener {

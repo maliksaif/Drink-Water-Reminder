@@ -16,17 +16,22 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".InfoActivity"
+                  android:screenOrientation="portrait"
                   android:theme="@style/MainTheme">
         </activity>
-        <activity android:name=".WalkThroughActivity">
+        <activity android:name=".WalkThroughActivity"
+        android:screenOrientation="portrait">
         </activity>
         <activity
+                android:screenOrientation="portrait"
                 android:name=".StatsActivity"
                 android:theme="@style/MainTheme">
         </activity>
-        <activity android:name=".InitUserInfoActivity">
+        <activity android:name=".InitUserInfoActivity"
+        android:screenOrientation="portrait">
         </activity>
         <activity
+                android:screenOrientation="portrait"
                 android:name=".MainActivity"
                 android:theme="@style/MainTheme">
             <intent-filter>

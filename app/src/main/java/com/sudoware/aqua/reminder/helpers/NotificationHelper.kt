@@ -19,7 +19,7 @@ import com.sudoware.aqua.reminder.R
 import com.sudoware.aqua.reminder.utils.AppUtils
 import java.util.*
 
-class NotificationHelper(val ctx: Context) {
+class NotificationHelper(private val ctx: Context) {
     private var notificationManager: NotificationManager? = null
 
     private val CHANNEL_ONE_ID = "com.sudoware.aqua.reminder.CHANNELONE"

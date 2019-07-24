@@ -10,17 +10,17 @@ import com.sudoware.aqua.reminder.R
 import com.sudoware.aqua.reminder.helpers.InfoHelper
 import kotlinx.android.synthetic.main.info_item.view.*
 
-class InformationAdapter(val context: Context,val informationList: List<InfoHelper> , val isThemeDark : Boolean) : RecyclerView.Adapter<InformationAdapter.ViewHolder>() {
+class InformationAdapter(val context: Context, private val informationList: List<InfoHelper>, private val isThemeDark : Boolean) : RecyclerView.Adapter<InformationAdapter.ViewHolder>() {
 
     //this method is returning the view for each item in the list
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
-        if(isThemeDark){
+        return if(isThemeDark){
             val v = LayoutInflater.from(parent.context).inflate(R.layout.info_item_dark, parent, false)
-            return ViewHolder(v)
+            ViewHolder(v)
         }else{
             val v = LayoutInflater.from(parent.context).inflate(R.layout.info_item, parent, false)
-            return ViewHolder(v)
+            ViewHolder(v)
         }
 
     }

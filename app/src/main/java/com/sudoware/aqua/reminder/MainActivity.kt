@@ -15,18 +15,14 @@ import androidx.core.content.ContextCompat
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.google.android.material.snackbar.Snackbar
+import com.pixplicity.generate.OnFeedbackListener
+import com.pixplicity.generate.Rate
 import com.sudoware.aqua.reminder.fragments.BottomSheetFragment
 import com.sudoware.aqua.reminder.helpers.AlarmHelper
 import com.sudoware.aqua.reminder.helpers.SqliteHelper
 import com.sudoware.aqua.reminder.utils.AppUtils
 import kotlinx.android.synthetic.main.activity_main.*
-import com.pixplicity.generate.OnFeedbackListener
-import com.pixplicity.generate.Rate
 import java.util.concurrent.TimeUnit
-import javax.xml.datatype.DatatypeConstants.DAYS
-
-
-
 
 
 class MainActivity : AppCompatActivity() {

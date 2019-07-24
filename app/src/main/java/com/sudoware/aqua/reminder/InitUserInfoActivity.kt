@@ -38,7 +38,7 @@ class InitUserInfoActivity : AppCompatActivity() {
 
         sharedPref = getSharedPreferences(AppUtils.USERS_SHARED_PREF, AppUtils.PRIVATE_MODE)
 
-        radioGender.setOnClickedButtonListener { button, position ->
+        radioGender.setOnClickedButtonListener { _, position ->
             gender = if (position == 0) {
                 "Male"
             } else {
@@ -78,7 +78,7 @@ class InitUserInfoActivity : AppCompatActivity() {
             val mTimePicker: TimePickerDialog
             mTimePicker = TimePickerDialog(
                 this,
-                TimePickerDialog.OnTimeSetListener { timePicker, selectedHour, selectedMinute ->
+                TimePickerDialog.OnTimeSetListener { _, selectedHour, selectedMinute ->
 
                     val time = Calendar.getInstance()
                     time.set(Calendar.HOUR_OF_DAY, selectedHour)

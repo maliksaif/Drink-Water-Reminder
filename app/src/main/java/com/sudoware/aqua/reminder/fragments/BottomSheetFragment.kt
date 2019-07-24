@@ -25,7 +25,7 @@ import java.text.DecimalFormat
 import java.util.*
 
 
-class BottomSheetFragment(val mCtx: Context) : BottomSheetDialogFragment() {
+class BottomSheetFragment(private val mCtx: Context) : BottomSheetDialogFragment() {
 
     private lateinit var sharedPref: SharedPreferences
     private var weight: String = ""

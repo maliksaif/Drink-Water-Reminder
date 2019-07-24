@@ -13,13 +13,13 @@ class SqliteHelper(val context: Context) : SQLiteOpenHelper(
 ) {
 
     companion object {
-        private val DATABASE_VERSION = 1
-        private val DATABASE_NAME = "Aqua"
-        private val TABLE_STATS = "stats"
-        private val KEY_ID = "id"
-        private val KEY_DATE = "date"
-        private val KEY_INTOOK = "intook"
-        private val KEY_TOTAL_INTAKE = "totalintake"
+        private const val DATABASE_VERSION = 1
+        private const val DATABASE_NAME = "Aqua"
+        private const val TABLE_STATS = "stats"
+        private const val KEY_ID = "id"
+        private const val KEY_DATE = "date"
+        private const val KEY_INTOOK = "intook"
+        private const val KEY_TOTAL_INTAKE = "totalintake"
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
@@ -32,7 +32,7 @@ class SqliteHelper(val context: Context) : SQLiteOpenHelper(
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        db!!.execSQL("DROP TABLE IF EXISTS " + TABLE_STATS)
+        db!!.execSQL("DROP TABLE IF EXISTS $TABLE_STATS")
         onCreate(db)
     }
 
@@ -58,6 +58,7 @@ class SqliteHelper(val context: Context) : SQLiteOpenHelper(
                 return it.getInt(it.getColumnIndex(KEY_INTOOK))
             }
         }
+        db.close()
         return 0
     }
 
@@ -72,7 +73,7 @@ class SqliteHelper(val context: Context) : SQLiteOpenHelper(
         return response
     }
 
-    fun checkExistance(date: String): Int {
+    private fun checkExistance(date: String): Int {
         val selectQuery = "SELECT $KEY_INTOOK FROM $TABLE_STATS WHERE $KEY_DATE = ?"
         val db = this.readableDatabase
         db.rawQuery(selectQuery, arrayOf(date)).use {
@@ -80,6 +81,7 @@ class SqliteHelper(val context: Context) : SQLiteOpenHelper(
                 return it.count
             }
         }
+        db.close()
         return 0
     }
 

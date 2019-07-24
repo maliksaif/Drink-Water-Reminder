@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.activity_walk_through.*
 class WalkThroughActivity : AppCompatActivity() {
     private var viewPagerAdapter: WalkThroughAdapter? = null
 
-    private lateinit var sharedPref : SharedPreferences;
+    private lateinit var sharedPref : SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

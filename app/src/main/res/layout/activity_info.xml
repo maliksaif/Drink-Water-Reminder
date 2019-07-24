@@ -20,6 +20,7 @@
             android:contentDescription="@string/back_button_imageview"/>
 
     <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginBottom="46dp"
             android:layout_below="@+id/btnBack"
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
