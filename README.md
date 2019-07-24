@@ -4,6 +4,9 @@
 
 Drink Water reminder simple android app to remind you to drink water and track your water intake habit and keep you hydrated.
 
+## Download Now.
+<a href="https://play.google.com/store/apps/details?id=com.sudoware.aqua.reminder"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=56px /></a>
+
 ## ScreenShots
 
 <img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/1-Intro.png" width="250px"> <img src="/fastlane/metadata/android/en-US/images/phoneScreenshots/2-Edit.png" width="250px"> 
@@ -16,8 +19,6 @@ Drink Water reminder simple android app to remind you to drink water and track y
 
 
 ## More Apps
-
-
 
 
 
@@ -40,7 +41,11 @@ Note : it may ask for updating some things like gradle and  build tools.
 ### Flashingo ( Simple Torch App )
 <a href="https://play.google.com/store/apps/details?id=pk.sudoware.com.flashingo"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=56px /></a>
 
-
+## TODO
+- [ ] Language Translation.
+- [ ] Adding Few more Items Like Different Drink Containers, Custom Containers.
+- [ ] Dynamic Loading of Fact's.
+- [ ] Android Wear Support. 
 
 ## Contributing
 
@@ -55,7 +60,3 @@ All icons were downloaded from [Flaticon](https://www.flaticon.com)
 UI design was inspired from [Dribble](https://dribbble.com)
 
 Thank you [Jabir Mohammad ACK](https://github.com/z3r0c00l-2k) for this Open Source Project.
-
-## For Original product you can Visit.
-
-You can also download the source code from [Original Developer](https://github.com/z3r0c00l-2k/AquaDroid).
