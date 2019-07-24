@@ -7,9 +7,9 @@ android {
     defaultConfig {
         applicationId "com.sudoware.aqua.reminder"
         minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 3
-        versionName "1.0.2"
+        targetSdkVersion 27
+        versionCode 4
+        versionName "1.0.4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
